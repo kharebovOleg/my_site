@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter-Regular.otf);
+}
+.registration_page {
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    width: 400px;
+    height: 650px;
+    border: 2px solid #2E9AFF;
+    border-radius: 30px;
+}
+
+.registration_head {
+    position: absolute;
+    width: 274px;
+    height: 66px;
+    top: 26px;
+    left: 69px;
+}
+
+.main_theme {
+    margin: 0;
+    width: 260px;
+    height: 36px;
+
+
+    font-family: 'Inter';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36.31px;
+    text-align: left;
+    color: black;
+}
+
+.go_to_authorithation {
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18.15px;
+    text-align: left;
+    color: black;
+}
+
+.go_to_authorithation > a {
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18.15px;
+    text-align: left;
+    color: rgba(66, 142, 255, 1);
+
+}
+
+.registration_form > input {
+    display: block;
+    width: 275px;
+    height: 45px;
+
+    margin-bottom: 10px;
+    border-radius: 10px;   
+}
+
+.registration_form {
+    position: absolute;
+    top: 134px;
+    left: 62px;
+}
