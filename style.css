@@ -58,8 +58,19 @@
     width: 275px;
     height: 45px;
 
-    margin-bottom: 10px;
+    margin-bottom: 11px;
     border-radius: 10px;   
+}
+
+.registration_form > button {
+    display: block;
+    width: 280px;
+    height: 45px;
+    margin-top: 25px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(66, 142, 255, 1);
+    border: 1px solid rgba(66, 142, 255, 1);  
 }
 
 .registration_form {
