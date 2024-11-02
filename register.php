@@ -1,4 +1,29 @@
-<?php
+
+<html>
+<head>
+<title>MY SITE</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="registration_page">
+    <div class="registration_head">
+        <p class="main_theme">Создание WEB ID</p>
+        <p class="go_to_authorithation">Уже есть WEB ID? <a href="#">Найти его здесь ></a></p>
+    </div>
+    <form class="registration_form" action="" method="POST">
+        <input type="text" name="firstname" placeholder="Имя" pattern="[a-zA-Z]+" required/>
+        <input type="text" name="lastname" placeholder="Фамилия" pattern="[a-zA-Z]+" required/>
+        <div class="line1"></div>
+        <input type="date" name="birthday" placeholder="Дата рождения"/>
+        <input type="text" name="country" placeholder="Страна"/>
+        <input type="email" name="email" placeholder="Почта" required/>
+        <div class="line2"></div>
+        <input type="password" name="password" placeholder="Пароль" required/>
+        <input type="password" name="password_repeat" placeholder="Повторите пароль"/>
+        <button type="submit"  name="register" value="register" class="sbm_btn">Продолжить</button>
+    </form>
+    <?php
     session_start();
     include('config.php');
     if (isset($_POST['register'])) {
@@ -16,11 +41,13 @@
             $query->bindParam("email", $email, PDO::PARAM_STR);
             $query->execute();
             if ($query->rowCount() > 0) {
-                echo '<p class="error">Этот адрес уже зарегистрирован!</p>';
                 ?>
                     <script type="text/javascript">
-                        
-                        alert("fail");
+                        const elem = document.createElement('p');
+                        elem.textContent = "Пользователь с такой почтой уже существует";
+                        elem.style.color = 'red';
+                        elem.classList.add('error_theme');
+                        document.body.appendChild(elem);
                     </script>
                 <?php
             }
@@ -45,28 +72,6 @@
         }
     }
 ?>
-<html>
-<head>
-<title>MY SITE</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="registration_page">
-    <div class="registration_head">
-        <p class="main_theme">Создание WEB ID</p>
-        <p class="go_to_authorithation">Уже есть WEB ID? <a href="#">Найти его здесь ></a></p>
-    </div>
-    <form class="registration_form" action="" method="POST">
-        <input type="text" name="firstname" placeholder="Имя" pattern="[a-zA-Z]+" required/>
-        <input type="text" name="lastname" placeholder="Фамилия" pattern="[a-zA-Z]+" required/>
-        <input type="date" name="birthday" placeholder="Дата рождения"/>
-        <input type="text" name="country" placeholder="Страна"/>
-        <input type="email" name="email" placeholder="Почта" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
-        <input type="password" name="password" placeholder="Пароль" required/>
-        <input type="password" name="password_repeat" placeholder="Повторите пароль"/>
-        <button type="submit"  name="register" value="register" class="sbm_btn">Продолжить</button>
-    </form>
 </div>
 </body>
 </html>

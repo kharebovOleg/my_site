@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Окт 31 2024 г., 10:05
+-- Время создания: Ноя 01 2024 г., 19:01
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.1.25
 
@@ -24,17 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `mytable`
+-- Структура таблицы `users`
 --
 
-CREATE TABLE `mytable` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `firstname` varchar(35) NOT NULL,
   `lastname` varchar(35) NOT NULL,
   `birthday` date NOT NULL,
   `country` varchar(15) NOT NULL,
   `email` varchar(35) NOT NULL,
-  `password` int(11) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,9 +42,9 @@ CREATE TABLE `mytable` (
 --
 
 --
--- Индексы таблицы `mytable`
+-- Индексы таблицы `users`
 --
-ALTER TABLE `mytable`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -52,9 +52,9 @@ ALTER TABLE `mytable`
 --
 
 --
--- AUTO_INCREMENT для таблицы `mytable`
+-- AUTO_INCREMENT для таблицы `users`
 --
-ALTER TABLE `mytable`
+ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

@@ -58,7 +58,7 @@
     width: 275px;
     height: 45px;
 
-    margin-bottom: 11px;
+    margin-bottom: 15px;
     border-radius: 10px;   
 }
 
@@ -78,3 +78,29 @@
     top: 134px;
     left: 62px;
 }
+
+.line1 {
+    position: absolute;
+    width: 343.02px;
+    height: 0px;
+    top: 111px;
+    left: -29px;
+    border: 1px solid rgba(168, 168, 168, 1);
+}
+
+.line2 {
+    position: absolute;
+    width: 343.02px;
+    height: 0px;
+    top: 291px;
+    left: -29px;
+    border: 1px solid rgba(168, 168, 168, 1);
+}
+
+.error_theme {
+    position: absolute;
+    top: 706px;
+    left: 362px;
+    font-size: 15px;
+}
+
