@@ -7,13 +7,14 @@
 </head>
 <body>
 <div class="registration_page">
-    <div class="registration_head">
-        <p class="main_theme">Создание WEB ID</p>
-        <p class="go_to_authorithation">Уже есть WEB ID? <a href="#">Найти его здесь ></a></p>
+    <button class="swithc_btn" id="swithc_btn">Сменить тему</button>
+    <div class="main_head">
+        <p class="first_line">Создание WEB ID</p>
+        <p class="second_line">Уже есть WEB ID? <a href="#">Найти его здесь ></a></p>
     </div>
-    <form class="registration_form" action="" method="POST">
-        <input type="text" name="firstname" placeholder="Имя" pattern="[a-zA-Z]+" required/>
-        <input type="text" name="lastname" placeholder="Фамилия" pattern="[a-zA-Z]+" required/>
+    <form class="fill_form" action="" method="POST">
+        <input type="text" name="firstname" placeholder="Имя" required/>
+        <input type="text" name="lastname" placeholder="Фамилия" required/>
         <div class="line1"></div>
         <input type="date" name="birthday" placeholder="Дата рождения"/>
         <input type="text" name="country" placeholder="Страна"/>
@@ -45,7 +46,6 @@
                     <script type="text/javascript">
                         const elem = document.createElement('p');
                         elem.textContent = "Пользователь с такой почтой уже существует";
-                        elem.style.color = 'red';
                         elem.classList.add('error_theme');
                         document.body.appendChild(elem);
                     </script>
@@ -62,7 +62,15 @@
                 $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
                 $result = $query->execute();
                 if ($result) {
-                    echo '<p>Succes</p>';
+                    ?>
+                    <script type="text/javascript">
+                        const elem = document.createElement('p');
+                        elem.textContent = "Регистрация прошла успешно";
+                        elem.style.color = 'green';
+                        elem.classList.add('error_theme');
+                        document.body.appendChild(elem);
+                    </script>
+                <?php
                 } else {
                     echo '<p class="error">Неверные данные!</p>';
                 }
@@ -73,5 +81,6 @@
     }
 ?>
 </div>
+<script src="switch.js"></script>
 </body>
 </html>
